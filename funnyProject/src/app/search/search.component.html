@@ -1,0 +1,17 @@
+<form (submit)="handleSubmit($event)">
+  <div class="form-group"></div>
+  <input class="form-control" (keyup)="getText($event)">
+  <input type="submit" class="form-control" value="Search">
+</form>
+<p *ngIf="userCount">Search count: {{userCount}}</p>
+<div *ngIf="user">
+  <mat-card *ngFor="let su of user" class="example-card" (click)="getUserDetial(su.login)">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{su.login}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image class="profile-image" src="{{su.avatar_url}}" alt="Photo of a Shiba Inu">
+
+
+  </mat-card>
+</div>
